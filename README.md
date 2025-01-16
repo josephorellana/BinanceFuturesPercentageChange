@@ -12,4 +12,4 @@ The percentage change is calculated by obtaining the maximum and minimum values 
 Image credits
 
 * [Up arrow icons created by Flowicon - Flaticon](https://www.flaticon.com/free-icons/up-arrow)
-* [Down arrow icons created by Flowicon - Flaticon](ttps://www.flaticon.com/free-icons/down-arrow)
+* [Down arrow icons created by Flowicon - Flaticon](https://www.flaticon.com/free-icons/down-arrow)
