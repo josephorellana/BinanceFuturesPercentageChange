@@ -1,0 +1,46 @@
+﻿<Window x:Class="BinanceFuturesAlert.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BinanceFuturesAlert"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Futuros - Percentage Change" Height="450" Width="800">
+
+    <Window.Resources>
+        <!-- Hyperlink style-->
+        <Style x:Key="LinkStyle" x:Name="LinkStyle" TargetType="Hyperlink">
+            <Setter Property="Foreground" Value="Black" ></Setter>
+            <Setter Property="TextDecorations" Value="None"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Blue"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Cursor" Value="Hand"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" Grid.Row="0" Panel.ZIndex="10" Background="#FF474D57">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="panelTitulo" Grid.Column="1" Height="30" Margin="6" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image gif:ImageBehavior.AnimatedSource="/Images/loading.gif"  x:Name="loadingIcon" Width="18" Height="18" VerticalAlignment="Center" Margin="2" />
+                    <TextBlock x:Name="textInformation" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="4,0,0,0" Foreground="#0ECB81" FontSize="18">Cargando...</TextBlock>
+                </StackPanel>
+            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True" x:Name="scrollFutures" VerticalAlignment="Stretch" Grid.Row="1" Panel.ZIndex="10" Background="#FF474D57">
+                <WrapPanel x:Name="contentCryptos" ScrollViewer.CanContentScroll="True" HorizontalAlignment="Center">
+                </WrapPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Window>
