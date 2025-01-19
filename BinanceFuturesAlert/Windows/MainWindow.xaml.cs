@@ -220,12 +220,12 @@ namespace BinanceFuturesAlert
                 Dispatcher.Invoke(() =>
                 {
                     TextBlock t = (TextBlock)FindName("CryptoPercentageUp" + c.Pair);
-                    t.Text = (c.Crypto.PercentageChangeUp > 0) ? string.Format("{0:N2} %", c.Crypto.PercentageChangeUp) + " %" : "--";
+                    t.Text = (c.Crypto.PercentageChangeUp > 0) ? string.Format("{0:N2}", c.Crypto.PercentageChangeUp) + " %" : "--";
                     t = (TextBlock)FindName("CryptoTimeUp" + c.Pair);
                     t.Text = (c.Crypto.MinutesChangeUp > 0) ? c.Crypto.MinutesChangeUp + " min" : "    --";
 
                     t = (TextBlock)FindName("CryptoPercentageDown" + c.Pair);
-                    t.Text = (c.Crypto.PercentageChangeDown < 0) ? string.Format("{0:N2} %", c.Crypto.PercentageChangeDown) + " %" : " --";
+                    t.Text = (c.Crypto.PercentageChangeDown < 0) ? string.Format("{0:N2}", c.Crypto.PercentageChangeDown) + " %" : " --";
                     t = (TextBlock)FindName("CryptoTimeDown" + c.Pair);
                     t.Text = (c.Crypto.MinutesChangeDown > 0) ? c.Crypto.MinutesChangeDown + " min" : "     --";
                 });
